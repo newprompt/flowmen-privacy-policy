@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Política de Privacidade — FlowMen</title>
-  <meta name="description" content="Política de Privacidade do FlowMen. O app não coleta nenhum dado. Tudo fica no seu celular.">
+  <meta name="description" content="Política de Privacidade do FlowMen. Nada que você digita sai do celular — só dados anônimos de uso e relatórios de falha.">
   <meta name="theme-color" content="#1e40af">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -16,14 +16,16 @@
     </nav>
 
     <h1>Política de Privacidade</h1>
-    <p class="meta"><strong>Última atualização:</strong> 20 de abril de 2026</p>
+    <p class="meta"><strong>Última atualização:</strong> 21 de abril de 2026</p>
 
     <h2>Resumo em uma linha</h2>
     <blockquote>
       <p>
-        <strong>O FlowMen não coleta, armazena ou compartilha absolutamente
-        nenhuma informação sobre você.</strong> Tudo fica no seu celular.
-        Sem exceção.
+        <strong>Nada do que você digita no FlowMen — nomes, registros,
+        motivos, notas, datas — sai do seu celular.</strong> Coletamos apenas
+        dados <strong>anônimos de uso</strong> (quais telas foram abertas,
+        quais botões foram tocados) pra entender como o app é usado e
+        corrigir falhas. Sem identificação pessoal.
       </p>
     </blockquote>
 
@@ -31,53 +33,97 @@
     <p>
       O FlowMen é um aplicativo desenvolvido por <strong>Fabiano Gadenz
       (NewPrompt)</strong> e disponibilizado gratuitamente na App Store e
-      Google Play. Este documento descreve como o aplicativo lida com dados
-      — e, mais importante, o que ele <strong>não</strong> faz.
+      Google Play. Este documento descreve exatamente o que é (e o que não é)
+      coletado quando você usa o app.
     </p>
 
-    <h2>O que o FlowMen coleta</h2>
-    <p><strong>Nada.</strong> Não há coleta de dados. Em nenhuma hipótese.</p>
-    <p>Isso inclui:</p>
+    <h2>O que coletamos</h2>
+
+    <h3>Dados de uso anônimos (via Amplitude)</h3>
+    <p>
+      Pra entender como o app é usado e priorizar melhorias, registramos
+      eventos agregados sem identificação pessoal:
+    </p>
     <ul>
-      <li>Não coletamos nome, e-mail, telefone, nem qualquer informação de contato.</li>
-      <li>Não coletamos sua localização.</li>
-      <li>Não coletamos identificadores do aparelho (IDFA, Advertising ID, device ID).</li>
-      <li>Não coletamos informações sobre como você usa o app (analytics, telemetria, crash reports, heat maps).</li>
-      <li>Não coletamos nada que você registra no app (respostas diárias, motivos, notas, datas, nomes de parceiras, ciclos).</li>
+      <li><strong>Eventos de navegação</strong> — quais telas você visita, em que ordem, por quanto tempo.</li>
+      <li><strong>Ações de funcionalidade</strong> — ex.: "registro salvo", "parceira criada", "modo discreto ativado". Nunca registramos <em>o que</em> você digitou — só que a ação aconteceu.</li>
+      <li><strong>Contexto técnico</strong> — versão do app, versão do sistema operacional (ex.: "iOS 17.5"), idioma, fabricante/modelo do aparelho.</li>
+      <li><strong>Identificador anônimo do aparelho</strong> — um UUID aleatório gerado no primeiro uso e armazenado só no seu celular. Permite separar "um usuário novo" de "um usuário recorrente" sem ligar a nada que identifique você.</li>
     </ul>
 
-    <h2>Onde ficam seus dados</h2>
-    <p><strong>Exclusivamente no armazenamento interno do seu celular.</strong></p>
+    <h3>Relatórios de falha (via Sentry)</h3>
     <p>
-      Tudo o que você digita no app — registros diários, nomes de parceiras,
-      datas especiais, ciclos, preferências — é gravado localmente, num
-      formato chamado <code>GetStorage</code>, dentro da pasta privada do app no
-      seu dispositivo.
+      Quando o app trava ou encontra um erro inesperado, enviamos um
+      relatório técnico que inclui:
     </p>
-    <p>
-      Essa pasta é acessível <strong>apenas pelo FlowMen</strong>. Outros
-      aplicativos, o sistema operacional e nós (desenvolvedores)
-      <strong>não temos acesso a ela</strong>.
-    </p>
-    <p>Se você apagar o app, os dados são apagados junto.</p>
-
-    <h2>O que o FlowMen NÃO faz</h2>
     <ul>
-      <li>Não envia dados para nenhum servidor (nosso ou de terceiros).</li>
-      <li>Não tem login nem cadastro.</li>
-      <li>Não usa Google Analytics, Firebase, Amplitude, Mixpanel, Sentry, ou qualquer outra ferramenta de analytics ou crash reporting.</li>
-      <li>Não mostra anúncios.</li>
-      <li>Não vende nem compartilha dados com parceiros.</li>
-      <li>Não se comunica com redes sociais.</li>
-      <li>Não faz backup automático em nuvem.</li>
+      <li>Tipo da falha + stack trace (linhas de código envolvidas)</li>
+      <li>Versão do app, sistema operacional e plataforma</li>
+      <li>Breadcrumbs — a sequência de telas/ações antes do erro</li>
     </ul>
+    <p>
+      Relatórios passam por um <strong>filtro automático</strong> que remove
+      valores de texto digitados (nomes, notas, motivos) antes de saírem do
+      aparelho.
+    </p>
+
+    <h2>O que NÃO coletamos</h2>
+    <p>Em nenhuma hipótese:</p>
+    <ul>
+      <li>Nome, e-mail, telefone, nem qualquer informação de contato.</li>
+      <li>Sua localização.</li>
+      <li>IDFA, Advertising ID ou qualquer identificador vinculado ao seu anúncio/perfil fora do app.</li>
+      <li>Nome, apelido ou cor da parceira.</li>
+      <li>Seus registros (se foi "sim" ou "não" em cada dia, rating, tags, motivo, nota).</li>
+      <li>Datas de aniversário, data do casal, datas customizadas.</li>
+      <li>Dados de ciclo menstrual (data de última menstruação, duração).</li>
+      <li>PIN de bloqueio ou informações de biometria.</li>
+      <li>Conteúdo dos seus backups de exportação.</li>
+    </ul>
+    <p>
+      Tudo isso fica <strong>exclusivamente no armazenamento interno do seu
+      celular</strong>, numa pasta privada do app (via
+      <code>GetStorage</code>). Outros aplicativos, o sistema operacional e
+      nós (desenvolvedores) não temos acesso. Se você apagar o app, todos
+      esses dados somem junto.
+    </p>
+
+    <h2>Com quem compartilhamos</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Provedor</th><th>Pra quê</th><th>Política</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Amplitude</strong></td>
+            <td>Análise de produto (eventos agregados)</td>
+            <td><a href="https://amplitude.com/privacy" target="_blank" rel="noopener">amplitude.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td><strong>Sentry</strong></td>
+            <td>Relatório de falhas do app</td>
+            <td><a href="https://sentry.io/privacy/" target="_blank" rel="noopener">sentry.io/privacy</a></td>
+          </tr>
+          <tr>
+            <td><strong>Apple / Google</strong></td>
+            <td>Entrega de notificações locais + distribuição</td>
+            <td>
+              <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a>,
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Não vendemos dados. Não compartilhamos com redes sociais. Não usamos
+      trackers de publicidade.
+    </p>
 
     <h2>Permissões solicitadas pelo app</h2>
-    <p>
-      O app pode pedir as seguintes permissões ao sistema operacional. Todas
-      são <strong>opcionais</strong> e usadas <strong>exclusivamente no seu
-      celular</strong>:
-    </p>
 
     <div class="table-wrap">
       <table>
@@ -86,72 +132,66 @@
         </thead>
         <tbody>
           <tr><td><strong>Face ID / Touch ID / Biometria</strong></td><td>Bloqueio opcional do app</td><td>Não</td></tr>
-          <tr><td><strong>Notificações</strong></td><td>Lembretes diários e de datas especiais, agendados localmente</td><td>Não</td></tr>
-          <tr><td><strong>Receber "boot completed" (Android)</strong></td><td>Reagendar lembretes locais após reiniciar o celular</td><td>Não</td></tr>
+          <tr><td><strong>Notificações</strong></td><td>Lembretes locais (diário + datas especiais)</td><td>Não</td></tr>
+          <tr><td><strong>Receber "boot completed" (Android)</strong></td><td>Reagendar lembretes após reboot</td><td>Não</td></tr>
         </tbody>
       </table>
     </div>
 
-    <p>
-      Em nenhum caso essas permissões geram envio de informação para fora do
-      aparelho.
-    </p>
-
     <h2>Conexão com a internet</h2>
-    <p>O FlowMen funciona <strong>totalmente offline</strong>. A única exceção é:</p>
+    <p>O FlowMen faz requisições de rede nas seguintes situações:</p>
     <ul>
-      <li>
-        <strong>Google Fonts</strong> — na primeira vez que o app abre, pode
-        baixar o arquivo da fonte <em>Manrope</em> via HTTPS a partir dos
-        servidores do Google. Depois disso, a fonte fica em cache e o download
-        não se repete. Esse download não envia informações sobre você; é apenas
-        a requisição de um arquivo público. O Google, como CDN, pode registrar
-        o endereço IP da requisição conforme sua própria política de
-        privacidade (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>).
-      </li>
+      <li>Envio de eventos anônimos de uso ao Amplitude (<code>api2.amplitude.com</code>)</li>
+      <li>Envio de relatórios de falha ao Sentry (<code>*.ingest.sentry.io</code>)</li>
+      <li>Download da fonte <em>Manrope</em> via Google Fonts na primeira execução (cached depois)</li>
     </ul>
     <p>
-      Se você preferir evitar esse download, pode rodar o app sem conexão —
-      o sistema usa a fonte padrão do dispositivo como fallback.
+      Nenhuma dessas requisições carrega conteúdo que você digitou no app. Se
+      o celular estiver offline, o app funciona normalmente — os eventos
+      ficam em uma fila local e sobem na próxima conexão.
     </p>
 
     <h2>Exportação de backup</h2>
     <p>
       O app tem uma função de <strong>"Exportar dados"</strong> (Ajustes →
-      Exportar dados) que gera um texto com todos os seus dados. Esse texto
-      fica na sua área de transferência (clipboard) e <strong>você</strong>
-      decide pra onde mandar (outro app, e-mail, arquivo). A função
-      <strong>"Importar dados"</strong> faz o inverso.
-    </p>
-    <p>
-      Essa funcionalidade serve pra você mover seus dados entre dispositivos
-      ou manter backup manual. Nós, desenvolvedores, <strong>não temos acesso
-      a esse backup em nenhum momento</strong>.
+      Exportar dados) que gera um texto com todos os seus dados locais e
+      coloca na área de transferência (clipboard). <strong>Você</strong>
+      decide pra onde mandar. Esse texto <strong>nunca passa por servidor
+      nosso</strong>.
     </p>
 
-    <h2>Cookies, trackers e tecnologias similares</h2>
+    <h2>Cookies e trackers</h2>
     <p>
-      <strong>Não usamos nenhum.</strong> O FlowMen é um aplicativo nativo
-      (iOS/Android) sem componentes web, sem cookies e sem trackers.
+      FlowMen é um aplicativo nativo sem componentes web, sem cookies e sem
+      trackers de terceiros além dos listados acima.
     </p>
 
     <h2>Público infantil</h2>
     <p>
-      O FlowMen não é destinado a menores de 12 anos. Não coletamos
-      deliberadamente dados de crianças — e, considerando que o app não
-      coleta dados de ninguém, também não coleta de crianças.
+      Não destinado a menores de 12 anos. Não coletamos deliberadamente dados
+      de crianças.
     </p>
+
+    <h2>Seus direitos (LGPD / GDPR)</h2>
+    <p>
+      Como não vinculamos os dados coletados a nenhuma identidade pessoal,
+      não temos como buscar ou apagar "os dados do fulano" a pedido — essa
+      conexão simplesmente não existe. O que você pode fazer:
+    </p>
+    <ul>
+      <li><strong>Apagar todos os dados locais</strong>: Ajustes → Zona de perigo → Apagar todos os dados, ou desinstalar o app (inclui o identificador anônimo).</li>
+      <li><strong>Solicitar informações</strong>: e-mail pra <a href="mailto:fabianomgadenz@gmail.com">fabianomgadenz@gmail.com</a>.</li>
+      <li><strong>Opt-out futuro</strong>: toggle em Ajustes pra desligar coleta em avaliação.</li>
+    </ul>
 
     <h2>Mudanças nesta política</h2>
     <p>
-      Se essa política mudar no futuro, a nova versão aparece aqui com a data
-      de atualização no topo. Se a mudança afetar materialmente a forma como
-      o app lida com dados, uma nota será incluída na próxima atualização do
-      app (na seção "Novidades" da App Store / Play Store).
+      Se mudar, a nova versão aparece aqui com data atualizada no topo.
+      Mudanças materiais viram nota nas release notes da App Store / Play
+      Store.
     </p>
 
     <h2>Entre em contato</h2>
-    <p>Dúvidas, reclamações ou sugestões sobre privacidade:</p>
     <ul>
       <li>
         <strong>E-mail:</strong>
@@ -163,9 +203,9 @@
     <hr>
 
     <p class="meta">
-      <em>Esta política está em conformidade com a Lei Geral de Proteção de
-      Dados (LGPD) do Brasil e com o GDPR da União Europeia. Em ambos os
-      casos, o cumprimento é trivial — não coletamos dados pessoais.</em>
+      <em>Em conformidade com LGPD (Brasil) e GDPR (União Europeia). Dados
+      pseudonimizados (sem vínculo com identidade pessoal); mantemos
+      transparência total sobre o que é coletado.</em>
     </p>
 
     <footer>

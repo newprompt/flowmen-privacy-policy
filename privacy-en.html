@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy — FlowMen</title>
-  <meta name="description" content="FlowMen's Privacy Policy. The app collects no data. Everything stays on your device.">
+  <meta name="description" content="FlowMen's Privacy Policy. Nothing you type leaves your device — only anonymous usage data and crash reports.">
   <meta name="theme-color" content="#1e40af">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -16,14 +16,16 @@
     </nav>
 
     <h1>Privacy Policy</h1>
-    <p class="meta"><strong>Last updated:</strong> April 20, 2026</p>
+    <p class="meta"><strong>Last updated:</strong> April 21, 2026</p>
 
     <h2>One-line summary</h2>
     <blockquote>
       <p>
-        <strong>FlowMen does not collect, store, or share any information
-        about you, period.</strong> Everything stays on your device. No
-        exceptions.
+        <strong>Nothing you type in FlowMen — names, records, reasons, notes,
+        dates — leaves your device.</strong> We collect only
+        <strong>anonymous usage data</strong> (which screens were opened,
+        which buttons were tapped) to understand how the app is used and fix
+        crashes. No personal identification.
       </p>
     </blockquote>
 
@@ -31,51 +33,94 @@
     <p>
       FlowMen is an app developed by <strong>Fabiano Gadenz (NewPrompt)</strong>
       and distributed for free on the App Store and Google Play. This document
-      explains how the app handles data — and, more importantly, what it does
-      <strong>not</strong> do.
+      describes exactly what is (and is not) collected when you use the app.
     </p>
 
     <h2>What we collect</h2>
-    <p><strong>Nothing.</strong> No data collection whatsoever.</p>
-    <p>This includes:</p>
+
+    <h3>Anonymous usage data (via Amplitude)</h3>
+    <p>
+      To understand how the app is used and prioritize improvements, we log
+      aggregated events without personal identification:
+    </p>
     <ul>
-      <li>No name, email, phone number, or any contact info.</li>
-      <li>No location.</li>
-      <li>No device identifiers (IDFA, Advertising ID, device ID).</li>
-      <li>No usage data (analytics, telemetry, crash reports, heat maps).</li>
-      <li>Nothing you type into the app (daily entries, reasons, notes, dates, partner names, cycles).</li>
+      <li><strong>Navigation events</strong> — which screens you visit, in what order, for how long.</li>
+      <li><strong>Feature actions</strong> — e.g. "record saved", "partner created", "discreet mode enabled". We never log <em>what</em> you typed — only that the action happened.</li>
+      <li><strong>Technical context</strong> — app version, OS version (e.g. "iOS 17.5"), language, device make/model.</li>
+      <li><strong>Anonymous device identifier</strong> — random UUID generated on first launch, stored only on your device. Distinguishes new vs returning user without linking to identity.</li>
     </ul>
 
-    <h2>Where your data lives</h2>
-    <p><strong>Exclusively on your device's internal storage.</strong></p>
+    <h3>Crash reports (via Sentry)</h3>
     <p>
-      Everything you enter in the app — daily records, partner names, special
-      dates, cycles, preferences — is saved locally using a store called
-      <code>GetStorage</code>, inside the app's private folder on your device.
+      When the app crashes or hits an unexpected error, we send a technical
+      report with:
     </p>
-    <p>
-      That folder is accessible <strong>only to FlowMen</strong>. Other apps,
-      the operating system, and we (the developers) <strong>have no access to
-      it</strong>.
-    </p>
-    <p>If you uninstall the app, the data is gone with it.</p>
-
-    <h2>What FlowMen does NOT do</h2>
     <ul>
-      <li>Does not send any data to servers (ours or third-party).</li>
-      <li>Does not have login or registration.</li>
-      <li>Does not use Google Analytics, Firebase, Amplitude, Mixpanel, Sentry, or any other analytics / crash reporting tool.</li>
-      <li>Does not show ads.</li>
-      <li>Does not sell or share data with partners.</li>
-      <li>Does not connect to social networks.</li>
-      <li>Does not back up automatically to any cloud.</li>
+      <li>Error type + stack trace</li>
+      <li>App version, OS, platform</li>
+      <li>Breadcrumbs — sequence of screens/actions before the error</li>
     </ul>
-
-    <h2>Permissions the app requests</h2>
     <p>
-      The app may request the following permissions. All are
-      <strong>optional</strong> and used <strong>only on your device</strong>:
+      Reports pass through an <strong>automatic scrubber</strong> that removes
+      text values (names, notes, reasons) before leaving the device.
     </p>
+
+    <h2>What we do NOT collect</h2>
+    <p>Under no circumstances:</p>
+    <ul>
+      <li>Name, email, phone, or any contact info.</li>
+      <li>Your location.</li>
+      <li>IDFA, Advertising ID, or any identifier linked to your profile outside the app.</li>
+      <li>Partner name, nickname, or color.</li>
+      <li>Records (yes/no, rating, tags, reason, note).</li>
+      <li>Special dates (birthday, anniversary, custom).</li>
+      <li>Menstrual cycle data.</li>
+      <li>PIN or biometric data.</li>
+      <li>Export backup content.</li>
+    </ul>
+    <p>
+      All of this stays <strong>exclusively on your device's internal
+      storage</strong> in the app's private sandbox (<code>GetStorage</code>).
+      Other apps, the OS, and we (the developers) have no access. Uninstall =
+      all gone.
+    </p>
+
+    <h2>Who we share with</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Provider</th><th>Purpose</th><th>Their policy</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Amplitude</strong></td>
+            <td>Product analytics (aggregate events)</td>
+            <td><a href="https://amplitude.com/privacy" target="_blank" rel="noopener">amplitude.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td><strong>Sentry</strong></td>
+            <td>Crash reporting</td>
+            <td><a href="https://sentry.io/privacy/" target="_blank" rel="noopener">sentry.io/privacy</a></td>
+          </tr>
+          <tr>
+            <td><strong>Apple / Google</strong></td>
+            <td>Local notification delivery + app distribution</td>
+            <td>
+              <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a>,
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      We do not sell data. We do not share with social networks. We do not use
+      advertising trackers.
+    </p>
+
+    <h2>Permissions</h2>
 
     <div class="table-wrap">
       <table>
@@ -84,69 +129,62 @@
         </thead>
         <tbody>
           <tr><td><strong>Face ID / Touch ID / Biometrics</strong></td><td>Optional app lock</td><td>No</td></tr>
-          <tr><td><strong>Notifications</strong></td><td>Local daily/special-date reminders</td><td>No</td></tr>
-          <tr><td><strong>Receive "boot completed" (Android)</strong></td><td>Re-schedule local reminders after device reboot</td><td>No</td></tr>
+          <tr><td><strong>Notifications</strong></td><td>Local reminders (daily + special dates)</td><td>No</td></tr>
+          <tr><td><strong>Receive "boot completed" (Android)</strong></td><td>Re-schedule local reminders after reboot</td><td>No</td></tr>
         </tbody>
       </table>
     </div>
 
-    <p>None of these result in data leaving your device.</p>
-
     <h2>Internet connection</h2>
-    <p>FlowMen works <strong>fully offline</strong>. The only exception is:</p>
+    <p>FlowMen makes network requests in these cases:</p>
     <ul>
-      <li>
-        <strong>Google Fonts</strong> — the first time the app runs, it may
-        download the <em>Manrope</em> font file over HTTPS from Google
-        servers. After that, the font is cached locally and the download does
-        not repeat. This download carries no information about you; it's just
-        a request for a public file. Google, acting as CDN, may log the
-        request's IP address according to their own privacy policy
-        (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>).
-      </li>
+      <li>Sending anonymous usage events to Amplitude (<code>api2.amplitude.com</code>)</li>
+      <li>Sending crash reports to Sentry (<code>*.ingest.sentry.io</code>)</li>
+      <li>Downloading Manrope font via Google Fonts on first run (cached after)</li>
     </ul>
     <p>
-      If you prefer to avoid this download, you can run the app offline —
-      the system falls back to the device's default font.
+      None of these carry content you typed. If offline, the app works —
+      events queue locally.
     </p>
 
     <h2>Backup export</h2>
     <p>
-      The app has an <strong>"Export data"</strong> function (Settings →
-      Export data) that generates a text blob with all your data. The blob is
-      placed on your clipboard and <strong>you</strong> decide where to send
-      it (another app, email, file). <strong>"Import data"</strong> does the
-      opposite.
-    </p>
-    <p>
-      This feature is for you to move data between devices or keep a manual
-      backup. We, the developers, <strong>have no access to that backup at
-      any point</strong>.
+      "Export data" (Settings → Export data) generates a text blob with your
+      local data and places it on the clipboard. <strong>You</strong> decide
+      where to send. The blob <strong>never passes through our servers</strong>.
     </p>
 
-    <h2>Cookies, trackers, and similar technologies</h2>
+    <h2>Cookies and trackers</h2>
     <p>
-      <strong>None used.</strong> FlowMen is a native iOS/Android app with no
-      web components, no cookies, and no trackers.
+      Native iOS/Android app — no web components, no cookies, no third-party
+      trackers besides those listed above.
     </p>
 
     <h2>Children's privacy</h2>
     <p>
-      FlowMen is not directed at children under 12. We do not knowingly
-      collect data from children — and, considering the app collects no data
-      from anyone, that includes children.
+      Not directed at children under 12. We do not knowingly collect data from
+      children.
     </p>
+
+    <h2>Your rights (LGPD / GDPR)</h2>
+    <p>
+      Since collected data is not linked to personal identity, we can't find
+      or delete "this specific user's data" on request — that connection
+      doesn't exist. What you can do:
+    </p>
+    <ul>
+      <li><strong>Delete all local data</strong>: Settings → Danger zone → Delete all data, or uninstall (includes the anonymous ID).</li>
+      <li><strong>Request info</strong>: email <a href="mailto:fabianomgadenz@gmail.com">fabianomgadenz@gmail.com</a>.</li>
+      <li><strong>Future opt-out</strong>: toggle to disable event collection under evaluation.</li>
+    </ul>
 
     <h2>Changes to this policy</h2>
     <p>
-      If this policy changes in the future, the new version will be posted
-      here with an updated date at the top. If a change materially affects
-      how the app handles data, a note will be included in the app's next
-      update (under "What's New" in the App Store / Play Store).
+      New version posted here with updated date. Material changes also appear
+      in next app release notes.
     </p>
 
-    <h2>Contact us</h2>
-    <p>Privacy questions, complaints, or suggestions:</p>
+    <h2>Contact</h2>
     <ul>
       <li>
         <strong>Email:</strong>
@@ -158,9 +196,9 @@
     <hr>
 
     <p class="meta">
-      <em>This policy complies with Brazil's General Data Protection Law
-      (LGPD) and the EU's GDPR. In both cases, compliance is trivial — we
-      collect no personal data.</em>
+      <em>Complies with Brazil LGPD and EU GDPR. Collected data is
+      pseudonymized (not linked to personal identity); we maintain full
+      transparency about what's collected.</em>
     </p>
 
     <footer>
